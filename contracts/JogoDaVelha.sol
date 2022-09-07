@@ -55,11 +55,11 @@ contract JogoDaVelha {
             validate_turn(games[game_id - 1].turns_oponent, movement),
             "POSICAO OCUPADA"
         );
-        require(
-            (games[game_id - 1].turns_oponent.length +
-                games[game_id - 1].turns_owner.length) == 9,
-            "EMPATE"
-        );
+        // require(
+        //     (games[game_id - 1].turns_oponent.length +
+        //         games[game_id - 1].turns_owner.length) == 9,
+        //     "EMPATE"
+        // );
         if (games[game_id - 1].owner == msg.sender) {
             games[game_id - 1].turns_owner.push(movement);
             bool win = validade_win(games[game_id - 1].turns_owner);

@@ -80,12 +80,6 @@ contract('JogoDaVelha', function (accounts) {
             await instance.runTurn(1, 5, { from: next_.next_movement });
         });
 
-        it("validar se tem oponent", async () => {
-            const instance = await JogoDaVelha.deployed();
-
-            const game = await instance.games(0);
-            assert.equal(game.oponent, accounts[2], `conta diferente ${game.oponent}`);
-        });
 
         it("vencedor", async () => {
             const instance = await JogoDaVelha.deployed();
